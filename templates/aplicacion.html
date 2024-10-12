@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Diagnóstico de Vehículos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Estilo general */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul {
+            background-color: #333;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #4CAF50;
+        }
+
+        .section-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        .large-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para la sección del sistema experto */
+        .container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input, button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #eee;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .carousel-item {
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .carousel-caption h3 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel-caption p {
+            font-size: 1.2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#sistema-experto">Sistema Experto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección de Inicio con Carrusel -->
+    <header class="slider-main">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <!-- Slide One -->
+                <div class="carousel-item active" style="background-image: url('https://img.pikbest.com/background/20220119/blue-smart-technology-hd-background_6230541.jpg!sw800')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Bienvenido al Sistema de Diagnóstico</h3>
+                        <p>Soluciones avanzadas para tu vehículo</p>
+                    </div>
+                </div>
+                <!-- Slide Two -->
+                <div class="carousel-item" style="background-image: url('https://via.placeholder.com/800x400?text=Imagen+2')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Diagnósticos precisos</h3>
+                        <p>Con tecnología avanzada</p>
+                    </div>
+                </div>
+                <!-- Slide Three -->
+                <div class="carousel-item" style="background-image: url('https://via.placeholder.com/800x400?text=Imagen+3')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Confianza y Seguridad</h3>
+                        <p>Siempre al servicio de tu vehículo</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Sección de Nosotros -->
+    <section id="nosotros" class="section-container">
+        <h2>Sobre Nosotros</h2>
+        <p>Somos una empresa dedicada a ofrecer soluciones avanzadas en el diagnóstico de vehículos mediante sistemas expertos.</p>
+        <img src="{{ url_for('static', filename='imagenes/imagen1.jpg') }}" alt="Imagen Nosotros" class="large-image">
+    </section>
+
+    <!-- Sección Sistema Experto -->
+    <section id="sistema-experto" class="section-container">
+        <h2>Sistema de Reglas - Diagnóstico de Vehículos</h2>
+        <img src="imagen1.jpg" alt="Imagen Nosotros" class="large-image">
+
+        <!-- Interfaz de sistema experto -->
+        <div class="container">
+            <section id="insertar-regla">
+                <h3>Añadir Regla</h3>
+                <input type="text" id="condiciones" placeholder="Condiciones separadas por comas">
+                <input type="text" id="conclusion" placeholder="Conclusión">
+                <button onclick="insertarRegla()">Añadir Regla</button>
+            </section>
+
+            <section id="consultar-reglas">
+                <h3>Consultar Reglas</h3>
+                <button onclick="consultarReglas()">Mostrar Reglas</button>
+                <ul id="lista-reglas"></ul>
+            </section>
+
+            <section id="diagnosticar">
+                <h3>Diagnosticar Problemas del Vehículo</h3>
+                <input type="text" id="hechos" placeholder="Ingrese hechos separados por comas">
+                <button onclick="diagnosticarProblema()">Diagnosticar</button>
+                <ul id="resultado-diagnostico"></ul>
+            </section>
+
+            <section id="eliminar-regla">
+                <h3>Eliminar Regla</h3>
+                <input type="number" id="id-regla" placeholder="ID de la regla">
+                <button onclick="eliminarRegla()">Eliminar</button>
+            </section>
+        </div>
+    </section>
+
+    <script>
+        function insertarRegla() {
+            const condiciones = document.getElementById('condiciones').value.split(',');
+            const conclusion = document.getElementById('conclusion').value;
+
+            fetch('/insertar_regla', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ condiciones, conclusion })
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message));
+        }
+
+        function consultarReglas() {
+            fetch('/consultar_reglas')
+                .then(response => response.json())
+                .then(reglas => {
+                    const lista = document.getElementById('lista-reglas');
+                    lista.innerHTML = '';
+                    reglas.forEach(regla => {
+                        const li = document.createElement('li');
+                        li.textContent = `ID: ${regla.id}, Condiciones: ${regla.condiciones}, Conclusión: ${regla.conclusion}`;
+                        lista.appendChild(li);
+                    });
+                });
+        }
+
+        function diagnosticarProblema() {
+            const hechos = document.getElementById('hechos').value.split(',').map(hecho => hecho.trim());
+
+            fetch('/diagnosticar', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ hechos })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const lista = document.getElementById('resultado-diagnostico');
+                lista.innerHTML = '';
+
+                if (data.conclusiones && data.conclusiones.length > 0) {
+                    data.conclusiones.forEach(conclusion => {
+                        const li = document.createElement('li');
+                        li.textContent = conclusion;
+                        lista.appendChild(li);
+                    });
+                } else {
+                    const li = document.createElement('li');
+                    li.textContent = data.message;
+                    lista.appendChild(li);
+                }
+            })
+            .catch(error => console.error('Error al diagnosticar:', error));
+        }
+
+        function eliminarRegla() {
+            const id = document.getElementById('id-regla').value;
+
+            fetch('/eliminar_regla', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id })
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message));
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
